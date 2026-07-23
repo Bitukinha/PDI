@@ -1,6 +1,7 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import favicon from "../assets/nutrimilho-icon.jpeg?url";
 
 function NotFoundComponent() {
   return (
@@ -48,6 +49,8 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: appCss,
       },
+      { rel: "icon", type: "image/jpeg", href: favicon },
+      { rel: "apple-touch-icon", href: favicon },
     ],
   }),
   shellComponent: RootShell,
@@ -76,8 +79,8 @@ function RootComponent() {
       <div className="flex-1">
         <Outlet />
       </div>
-      <footer className="border-t border-border bg-card/40 py-4 text-center text-xs text-muted-foreground print:hidden">
-        © {year} · Site criado por <span className="font-medium text-foreground">Novaes Tech</span>
+      <footer className="border-t border-border bg-card/40 py-4 px-4 text-center text-xs text-muted-foreground print:hidden">
+        © {year} Nutrimilho - (Novaes Tech) | Todos os direitos reservados
       </footer>
     </div>
   );
